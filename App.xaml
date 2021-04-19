@@ -1,0 +1,23 @@
+﻿<Application x:Class="VierGewinntUeb.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="VierGewinnt.xaml">
+    <Application.Resources>
+        <!-- Style mit Trigger zum Einblenden des Spielergebnisses -->
+        <Style TargetType="Border" x:Key="BorderStyle">
+            <Style.Triggers>
+                <Trigger Property="Visibility" Value="Visible">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(Border.Width)"
+                                    From="0" To="300" Duration="0:0:0.5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>
